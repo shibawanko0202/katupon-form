@@ -1,0 +1,219 @@
+/* common */
+
+  @font-face{ 
+    font-family: 'DQ';
+    src: url('../fonts/PixelMplus10-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  html{
+    height: 100%;
+    width: 100%;
+    /* cursor: none; */
+  }
+
+  body{
+    height: 100%;
+    width: 600px;
+    font-family: 'DQ';
+    color: #fff;
+    background-color: #000;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+/* common */
+
+
+.flashscreen{
+  position: absolute;
+  width: 600px;
+  height: 100%;
+  z-index: 999;
+  background-color: #fff;
+  opacity: 0;
+}
+.flashscreen.in{
+  animation: flashscreenanime 1s forwards;
+}
+@keyframes flashscreenanime {
+  0% { opacity: 1; }
+  30% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.blackout{
+  position: absolute;
+  width: 600px;
+  height: 100%;
+  z-index: 999;
+  background-color: #000;
+  opacity: 0;
+}
+.blackout.in{
+  opacity: 1;
+  transition: all 3s 1s linear;
+}
+
+.main{
+  z-index: 99;
+  position: relative;
+  width: 600px;
+  height: 525px;
+  margin: calc((100vh - 550px) / 2) auto;
+  opacity: 1;
+}
+.main.off{
+  transform: scaleY(0);
+  opacity: 0;
+}
+.bgi{
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+  object-position: 10% 50%;
+  z-index: -1;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  margin: 100px 0 125px;
+  transform: scaleY(0);
+  filter: grayscale(10%);
+  transition: transform 2s 0s,
+              border 0s 0s;
+}
+.bgi.apear{
+  transform: scaleY(1);
+}
+.bgi.apear2{
+  border-color: #fff;
+}
+.katsuya{
+  position: absolute;
+  top: 30%;
+  left: calc(50% - 65px);
+  width: 120px;
+  z-index: 0;
+  /* opacity: 0; */
+  transition: opacity 0s 2.3s;
+}
+.katsuya.in{
+  opacity: 1;
+}
+.katsuya.flash{
+  animation: blinkEffect .1s step-end 3;
+}
+.frame{
+  position: absolute;
+  border: 4px solid #fff;
+  border-radius: 4px;
+  outline: 1.5px solid #303029;;
+  background-color: #303029;
+  /* opacity: 0; */
+  transition: opacity 0s 3s;
+}
+.frame.apear{
+  opacity: 1;
+}
+.gameover.over{
+  border-color: #dc6216;
+  color: #dc6216;
+}
+.readme{
+  top: 20px;
+  left: 30px;
+  padding: 4px 12px;
+  line-height: 30px;
+}
+.mairei{
+  top: 30px;
+  right: 50px;
+  padding: 4px 12px;
+  line-height: 30px;
+}
+.command{
+  bottom: -30px;
+  left: 10px;
+}
+.frame.check{
+  bottom: -30px;
+  right: 20px;
+  z-index: 2;
+  text-align: center;
+  /* display: none; */
+}
+.command dt,
+.check dt{
+  text-align: center;
+  font-weight: normal;
+  border-bottom: 2px solid #fff;
+  padding: 6px 10px;
+}
+.check dt{
+  padding: 12px 24px;
+}
+.check-text{
+  padding: 12px;
+  margin: 0 auto;
+}
+.submit{
+  animation: blinkEffect .6s step-end infinite;
+}
+.list-check{
+  appearance: none;
+  width: 0;
+  height: 0;
+  padding: 0;
+}
+.command-lists{
+  display: flex;
+  flex-direction: column;
+}
+.command-list{
+  position: relative;
+  display: block;
+  padding: 8px 8px 8px 26px;
+  /* appearance: none; */
+}
+.check-list{
+  position: relative;
+  padding: 8px 8px 8px 36px;
+}
+.list-check:checked:before{
+  content: url("../img/矢印.png");
+  display: inline-block;
+  vertical-align: middle;
+  transform: scale(0.06);
+  position: relative;
+  top: -198px;
+  left: -127px;
+  animation: blinkEffect .6s step-end infinite;
+}
+.textbox{
+  bottom: 0px;
+  left: 185px;
+  width: 400px;
+  height: 140px;
+  padding: 8px;
+  transition: opacity 0s 2s;
+}
+.text{
+  width: 100%;
+  white-space: nowrap;
+  caret-color: transparent;
+  padding: 4px;
+}
+
+@keyframes blinkEffect {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes typing{
+  0% {width: 0;}
+}
+@keyframes blink{
+  50% {border-right-color: transparent;}
+}
