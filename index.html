@@ -13,17 +13,21 @@
 
   <div class="main" id="main">
     <audio loop src="bgm/戦火を交えて(ループ).mp3" type="audio/mp3" id="bgm02"></audio>
-    <img src="img/ヴェネチアンゴンドラ.png" alt="" class="bgi gameover apear apear2" id="bgi">
-    <img src="img/立ち絵.png" alt="" class="katsuya" id="katsuya">
+    <div class="bgi gameover apear apear2" id="bgi">
+      <img src="img/ヴェネチアンゴンドラ.png" alt="" class="bgi-img">
+      <img src="img/立ち絵.png" alt="" class="katsuya" id="katsuya">
+    </div>
     <div class="readme frame gameover">
-      選択肢をタップ<br>
-      して下さい
+      選択肢を選んで<br>
+      「送信する」を<br>
+      タップして下さい
     </div>
     <div class="mairei frame gameover">
       けっこん<br>
       しようぜ
     </div>
-    <form action="" method="post">
+    <form action="">
+    <!-- <form action="" method="post"> -->
       <dl class="command frame gameover">
         <dt class="gameover">泉帆</dt>
         <dd class="command-lists">
@@ -39,7 +43,7 @@
       </dl>
       <dl class="check frame" id="check">
         <dt id="check-final" class="check-text">
-          「『うん』」でよろしいですか？
+          「『うん』」で<br>よろしいですか？
         </dt>
         <dd>
           <input type="submit" value="送信する" class="check-text submit">
