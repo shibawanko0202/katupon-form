@@ -219,7 +219,7 @@ let textcounter = false;
 for(let i = 0; i < selects.length; i++){
   selects[i].addEventListener('change',() => {
     if(selects[i].checked){
-      check_final.innerHTML = `「${selects[i].value}」でよろしいですか？`;
+      check_final.innerHTML = `「${selects[i].value}」で<br>よろしいですか？`;
     };
   });
 };
