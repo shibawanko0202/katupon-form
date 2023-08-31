@@ -221,7 +221,7 @@
   font-size: 16px;
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (min-width: 361px) and (max-width: 380px) {
   /* 380px以下に適用されるCSS */
   .textbox{
     font-size: 14px;
@@ -232,7 +232,14 @@
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (min-width: 341px) and (max-width: 360px) {
+  .textbox{
+    font-size: 14px;
+  }
+  .check-text.small{
+    padding: 10px;
+    font-size: 12px;
+  }
   .command{
     left: 4px;
   }
@@ -243,6 +250,14 @@
     width: calc(100%);
     margin: 0px;
     padding: 4px;
+    font-size: 14px;
+  }
+  .check-text.small{
+    padding: 10px;
+    font-size: 12px;
+  }
+  .command{
+    left: 4px;
   }
   .frame.check{
     right: 4px;

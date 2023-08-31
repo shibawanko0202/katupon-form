@@ -224,8 +224,7 @@ for(let i = 0; i < selects.length; i++){
         check_final.classList.add("small");
       }else{
         check_final.classList.remove("small");
-      }
-      console.log(check_final.textContent.length)
+      };
     };
   });
 };
