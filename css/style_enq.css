@@ -211,42 +211,36 @@
   animation: blinkEffect .6s step-end infinite;
 }
 .textbox{
-  bottom: 140px;
+  bottom: 175px;
   left: 0px;
   width: calc(100% - 8px);
-  height: 140px;
+  height: 100px;
   padding: 8px;
   margin: 0px 4px;
   transition: opacity 0s 2s;
+  font-size: 16px;
 }
-.sp-text{
-  display: none;
-}
-/* .sp-br{
-  display: none;
-} */
 
 @media screen and (max-width: 380px) {
   /* 380px以下に適用されるCSS */
-  .sp-span{
-    display: none;
-  }
-  .sp-text{
-    display: block;
+  .textbox{
+    font-size: 14px;
   }
   .command{
     left: 4px;
   }
-  .check-text{
+  .check-text.small{
     padding: 10px;
     font-size: 12px;
   }
-  /* .sp-br{
-    display: block;
-  } */
 }
 
 @media screen and (max-width: 340px) {
+  .textbox{
+    width: calc(100%);
+    margin: 0px;
+    padding: 4px;
+  }
   .frame.check{
     right: 4px;
   }

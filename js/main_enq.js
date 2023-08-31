@@ -220,6 +220,13 @@ for(let i = 0; i < selects.length; i++){
   selects[i].addEventListener('change',() => {
     if(selects[i].checked){
       check_final.innerHTML = `「${selects[i].value}」で<br>よろしいですか？`;
+      if(check_final.textContent.length > 16){
+        check_final.classList.add("small");
+      }else{
+        check_final.classList.remove("small");
+      }
+      console.log(check_final.textContent.length)
     };
   });
 };
+
