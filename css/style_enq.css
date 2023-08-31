@@ -226,12 +226,15 @@
   .textbox{
     font-size: 14px;
   }
-  .command{
-    left: 4px;
-  }
   .check-text.small{
     padding: 10px;
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .command{
+    left: 4px;
   }
 }
 
