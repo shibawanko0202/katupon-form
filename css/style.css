@@ -367,11 +367,12 @@
   display: flex;
 }
 .loading-dott{
-  position: relative;
+  /* position: relative; */
   display: block;
   width: 20px;
   height: 10px;
-  top: 8px;
+  /* top: 8px; */
+  margin-top: 8px;
 }
 .loading-dott:nth-child(1){
   -webkit-animation: blinkDott1 2s 0s step-end infinite;
