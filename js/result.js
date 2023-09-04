@@ -107,6 +107,6 @@ reload_btn.addEventListener('click',()=>{
 
 const loading = document.getElementById("result-loading");
 
-// setTimeout(() => {
-//   loading.classList.add("loaded");
-// }, 3000);
+setTimeout(() => {
+  loading.classList.add("loaded");
+}, 3000);

@@ -29,8 +29,8 @@ let control = true;
 // テキストの内容
 const texts = document.getElementsByClassName("text");
 let text_interval;
-const text00 = ["カツヤが　あらわれた！",
-"カツヤは　『けっこんしよう』　と言っている…。"];
+const text00 = ["勝也が　あらわれた！",
+"勝也は　『けっこんしよう』　と言っている…。"];
 
 let textcounter = false;
 
@@ -67,8 +67,6 @@ let textcounter = false;
 
       setTimeout(()=>{
         text_interval = setInterval(()=>{
-          // serif_SE.currentTime = 0;
-          // serif_SE.play();
           texts[i].innerHTML = t[i].slice(0,n);
           //HTMLのtextに、変数sの０文字目からn文字までのテキストを表示する
           if(n < len){
@@ -78,8 +76,8 @@ let textcounter = false;
             //文字を増やす処理の回数が入力された文字数を超えた時の処理
             clearInterval(text_interval);
           };
-        },50);
-      },(len_total * 100));
+        },40);
+      },(len_total * 60));
     };
   };
 
@@ -89,72 +87,38 @@ let textcounter = false;
 // バトル開始関数
 
   function battle(){
+    
+    // com_lists[current_command].classList.remove("blink");
 
-    new Promise((resolve)=>{
-      control_off();
-      com_lists[current_command].classList.remove("blink");
-      start_SE.currentTime = 0;
-      start_SE.play();
+    flashscreen.classList.add("in");
+
+    // 背景導入
+    bgi.classList.add("apear");
+    textbox.classList.add("apear");
+    katsuya.classList.add("in");
+    setTimeout(()=>{
+      bgi.classList.add("apear2");
+    },2000);
+     
+    // カツヤ登場
+    setTimeout(()=>{
+      word(text00);
+    },4000);
+    
+    for(let i = 0;i < frames.length;i++){
       setTimeout(()=>{
-        resolve();
-      },5600);
-    }).then(()=>{
-      // 戦火を交えて(ループ)開始
-      BGM02.play();
-    });
+        frames[i].classList.add("apear");
+      },(i * 60));
+    };
+    setTimeout(()=>{
+      selects[0].checked = true;
+    },8000);
 
-    new Promise((resolve) =>{
-      
-      flashscreen.classList.add("in");
-      setTimeout(()=>{
-        resolve();
-      },1200);
-
-    }).then(()=>{
-              
-      new Promise((resolve)=>{
-
-        // 背景導入
-        bgi.classList.add("apear");
-        textbox.classList.add("apear");
-        katsuya.classList.add("in");
-        setTimeout(()=>{
-          bgi.classList.add("apear2");
-        },2000);
-        setTimeout(()=>{
-          resolve();
-        },1200);
-
-      }).then(()=>{
-
-        new Promise((resolve)=>{
-          
-          // カツヤ登場
-          setTimeout(()=>{
-            word(text00);
-          },1800);
-          setTimeout(()=>{
-            resolve();
-          },3000);
-
-        }).then(()=>{
-          
-          for(let i = 0;i < frames.length;i++){
-            setTimeout(()=>{
-              frames[i].classList.add("apear");
-            },(i * 60))
-          };
-
-          setTimeout(()=>{
-            control_on();
-          },4000);
-
-        });
-      });
-    });
   };
 
 // バトル開始関数
+
+battle();
 
 
 //最初のテキストの表示
