@@ -118,7 +118,7 @@ let textcounter = false;
 
 // バトル開始関数
 
-battle();
+// battle();
 
 
 //最初のテキストの表示
@@ -139,4 +139,9 @@ for(let i = 0; i < selects.length; i++){
       };
     };
   });
+};
+
+
+window.onpageshow = function(event) {
+  battle();
 };
