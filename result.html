@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KATUPON RESULT</title>
+  <link rel="icon" href="img/スライムドット絵.png">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="result-body">
+  <div class="result-loading" id="result-loading">
+    <!-- <p>投票ありがとうございます</p> -->
+    <div class="chara-box">
+      <div class="chara loading-katuya">
+        <img src="img/勝也(タキシード)(左A).png" alt="">
+        <img src="img/勝也(タキシード)(左B).png" alt="">
+      </div>
+      <div class="chara loading-izuho">
+        <img src="img/泉帆(左A).png" alt="">
+        <img src="img/泉帆(左B).png" alt="">
+      </div>
+    </div>
+    <h1>
+      集計中<span class="loading-dott">・</span>
+      <span class="loading-dott">・</span>
+      <span class="loading-dott">・</span>
+    </h1>
+  </div>
+  <dl>
+    <dt class="result-dt">
+      現在の集計結果
+      <button class="reload-button" id="reload-btn">集計結果を更新する</button>
+    </dt>
+    <dd class="graph" id="graph">
+        <div class="box one" id="one">
+          <div class="percent">
+            <svg>
+              <circle class="base" cx="75" cy="75" r="70"></circle>
+              <circle class="line" cx="75" cy="75" r="70"></circle>
+            </svg>
+            <div class="number">
+              <h3 class="title">
+                <span class="value">0</span>
+                <span>%</span>
+              </h3>
+            </div>
+            <p class="graphtext">『うん』</p>
+          </div>
+        </div>
+        <div class="box two" id="two">
+          <div class="percent">
+            <svg>
+              <circle class="base" cx="75" cy="75" r="70"></circle>
+              <circle class="line" cx="75" cy="75" r="70"></circle>
+            </svg>
+            <div class="number">
+              <h3 class="title">
+                <span class="value">0</span>
+                <span>%</span>
+              </h3>
+            </div>
+            <p class="graphtext">『うなちゃづけ』</p>
+          </div>
+        </div>
+        <div class="box three" id="three">
+          <div class="percent">
+            <svg>
+              <circle class="base" cx="75" cy="75" r="70"></circle>
+              <circle class="line" cx="75" cy="75" r="70"></circle>
+            </svg>
+            <div class="number">
+              <h3 class="title">
+                <span class="value">0</span>
+                <span>%</span>
+              </h3>
+            </div>
+            <p class="graphtext">謀ったなー！？</p>
+          </div>
+        </div>
+        <div class="box four" id="four">
+          <div class="percent">
+            <svg>
+              <circle class="base" cx="75" cy="75" r="70"></circle>
+              <circle class="line" cx="75" cy="75" r="70"></circle>
+            </svg>
+            <div class="number">
+              <h3 class="title">
+                <span class="value">0</span>
+                <span>%</span>
+              </h3>
+            </div>
+            <p class="graphtext">あ、順番来たよ</p>
+          </div>
+        </div>
+
+    </dd>
+  </dl>
+  <script src="js/result.js"></script>
+</body>
+</html>

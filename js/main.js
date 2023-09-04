@@ -1,40 +1,5 @@
 "use strict"
 
-// すべての音量の一括コントロール変数
-const BGMcontrol = 1;
-
-// BGM設定
-const BGM02 = document.getElementById('bgm02');
-BGM02.volume = 0.3 * BGMcontrol;
-
-let BGMinterval;
-function BGMfeedout(){
-  BGMinterval = setInterval(()=>{
-    let feedvol = 0.02;
-    BGM02.volume = BGM02.volume - feedvol;
-    if(BGM02.volume <= 0.02){
-      clearInterval(BGMinterval);
-      BGM02.pause();
-    };
-  },300);
-};
-
-
-// SE設定
-
-const boyoyon_SE = new Audio("bgm/決定ボタンを押す52.mp3");
-boyoyon_SE.volume = 0.7 * BGMcontrol;
-const start_SE = new Audio("bgm/戦火を交えて(戦闘開始).mp3");
-start_SE.volume = 0.3 * BGMcontrol;
-const choice_SE = new Audio("bgm/選択音.wav");
-choice_SE.volume = 0.1 * BGMcontrol;
-const attack_SE = new Audio("bgm/攻撃音.mp3");
-attack_SE.volume = 0.4 * BGMcontrol;
-const serif_SE = new Audio("bgm/会話_単音.mp3");
-serif_SE.volume = 0.2 * BGMcontrol;
-// const gameover_SE = new Audio("bgm/ゲームオーバー.mp3");
-// gameover_SE.volume = 0.3 * BGMcontrol;
-
 
 // スクリーン切り替え
 let screen_type = 3;
@@ -54,10 +19,9 @@ const flashscreen = document.getElementById("flashscreen");
 const blackout = document.getElementById("blackout");
 const main = document.getElementById("main");
 const bgi = document.getElementById("bgi");
-const gameovers = document.getElementsByClassName("gameover");
 const frames = document.getElementsByClassName("frame");
 const textbox = document.getElementById("textbox");
-const selects = document.getElementsByName("select");
+const selects = document.getElementsByName("entry.1604613071");
 const check_final = document.getElementById("check-final");
 let control = true;
 
@@ -67,18 +31,8 @@ const texts = document.getElementsByClassName("text");
 let text_interval;
 const text00 = ["カツヤが　あらわれた！",
 "カツヤは　『けっこんしよう』　と言っている…。"];
-// const text01 = ["カツヤ「・・・。"];
-// const text02 = [
-//   "カツヤ「いや、そうじゃなくて・・・。",
-//   "いずほ「え？『け』でしょ？",
-//   "カツヤ「・・・・・・・・・・・・",
-//   "　　　　・・・・・・『けいえいはたん』"
-// ];
-// const text03 = ["カツヤ「・・・。"];
-// const text04 = ["カツヤ「あ、そっすね・・・。","いずほ「はやく行こっ！"];
 
 let textcounter = false;
-
 
 // コントロールON/OFF
 
@@ -222,4 +176,3 @@ for(let i = 0; i < selects.length; i++){
     };
   });
 };
-

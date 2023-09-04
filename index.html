@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KATSUPON QUEST</title>
+  <title>KATUPON QUEST</title>
   <link rel="icon" href="img/スライムドット絵.png">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
@@ -12,32 +12,31 @@
 <body>
 
   <div class="main" id="main">
-    <audio loop src="bgm/戦火を交えて(ループ).mp3" type="audio/mp3" id="bgm02"></audio>
-    <div class="bgi gameover apear apear2" id="bgi">
+    <div class="bgi apear apear2" id="bgi">
       <img src="img/ヴェネチアンゴンドラ.png" alt="" class="bgi-img">
       <img src="img/立ち絵.png" alt="" class="katsuya" id="katsuya">
     </div>
-    <div class="readme frame gameover">
+    <div class="readme frame">
       選択肢を選んで<br>
       「送信する」を<br>
       タップして下さい
     </div>
-    <div class="mairei frame gameover">
+    <div class="mairei frame">
       けっこん<br>
       しようぜ
     </div>
-    <form action="">
-    <!-- <form action="" method="post"> -->
-      <dl class="command frame gameover">
+    <form action="" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+    <!-- <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeEKZuhcO3qPUkwcxJjmXb7jd_bR0GJ_LwPC8POyzXSdCBxzA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;"> -->
+      <dl class="command frame">
         <dt class="gameover">泉帆</dt>
         <dd class="command-lists">
-          <input type="radio" name="select" value="『うん』" id="select_1" class="list-check" checked>
+          <input type="radio" name="entry.1604613071" value="『うん』" id="select_1" class="list-check" checked>
           <label for="select_1" class="command-list">『うん』</label>
-          <input type="radio" name="select" value="『うなちゃづけ』" id="select_2" class="list-check">
+          <input type="radio" name="entry.1604613071" value="『うなちゃづけ』" id="select_2" class="list-check">
           <label for="select_2" class="command-list">『うなちゃづけ』</label>
-          <input type="radio" name="select" value="謀ったなー！？" id="select_3" class="list-check">
+          <input type="radio" name="entry.1604613071" value="謀ったなー！？" id="select_3" class="list-check">
           <label for="select_3" class="command-list">謀ったなー！？</label>
-          <input type="radio" name="select" value="あ、順番来たよ" id="select_4" class="list-check">
+          <input type="radio" name="entry.1604613071" value="あ、順番来たよ" id="select_4" class="list-check">
           <label for="select_4" class="command-list">あ、順番来たよ</label>
         </dd>
       </dl>
@@ -49,8 +48,12 @@
           <input type="submit" value="送信する" class="check-text submit">
         </dd>
       </dl>
+      <script type="text/javascript">
+        var submitted = false;
+      </script>
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='result.html';}"></iframe>
     </form>
-    <div class="textbox frame gameover" id="textbox">
+    <div class="textbox frame" id="textbox">
       <p class="text">勝也が　あらわれた！</p>
       <p class="text">勝也は　『けっこんしよう』　と言っている…。</p>
       <p class="text"></p>
