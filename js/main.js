@@ -1,10 +1,6 @@
 "use strict"
 
 
-// スクリーン切り替え
-let screen_type = 3;
-// (QR(1) → graph(2)→ battle(3))
-
 // コマンド設定
 const katsuya = document.getElementById("katsuya");
 const com_lists = document.getElementsByClassName(" command-list");
@@ -108,7 +104,7 @@ let textcounter = false;
     for(let i = 0;i < frames.length;i++){
       setTimeout(()=>{
         frames[i].classList.add("apear");
-      },(i * 60));
+      },(i * 80));
     };
     setTimeout(()=>{
       selects[0].checked = true;
@@ -118,13 +114,7 @@ let textcounter = false;
 
 // バトル開始関数
 
-// battle();
 
-
-//最初のテキストの表示
-// setTimeout(()=>{
-//   word(text00);
-// },1800);
 
 
 // 最終チェックの表示変更
@@ -142,6 +132,23 @@ for(let i = 0; i < selects.length; i++){
 };
 
 
+// ブラウザバックでも発火するpageshowをつかう
 window.onpageshow = function(event) {
+  // ブラウザバックとかでキャッシュが残る恐れがあるので一旦リセット
+  flashscreen.classList.remove("in");
+  bgi.classList.remove("apear");
+  katsuya.classList.remove("in");
+  textbox.classList.remove("apear");
+  bgi.classList.remove("apear2");
+  for(let i = 0;i < texts.length;i++){
+    texts[i].innerHTML = null;
+  };
+  for(let i = 0;i < frames.length;i++){
+    frames[i].classList.remove("apear");
+  };
+  for(let i = 0;i < selects.length;i++){
+    selects[i].checked = false;
+  };
+
   battle();
 };
