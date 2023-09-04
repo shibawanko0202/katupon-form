@@ -94,9 +94,9 @@ let textcounter = false;
 
     // 背景導入
     bgi.classList.add("apear");
-    textbox.classList.add("apear");
     katsuya.classList.add("in");
     setTimeout(()=>{
+      textbox.classList.add("apear");
       bgi.classList.add("apear2");
     },2000);
      
