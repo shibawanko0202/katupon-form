@@ -150,5 +150,10 @@ window.onpageshow = function(event) {
     selects[i].checked = false;
   };
 
+  if (event.persisted) {
+    // bfcache発動時の処理
+    window.location.reload();
+  }
+
   battle();
 };
