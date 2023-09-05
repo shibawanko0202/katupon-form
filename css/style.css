@@ -452,7 +452,9 @@
   width: 200px;
   cursor: pointer;
   opacity: 0;
-  animation: blinkEffect 1.2s 8s step-end infinite;
+}
+.reload-button.apear{
+  animation: blinkEffect 1.2s 3s step-end infinite;
 }
 .graph{
   width: 100%;
