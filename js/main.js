@@ -135,23 +135,24 @@ for(let i = 0; i < selects.length; i++){
 // ブラウザバックでも発火するpageshowをつかう
 window.onpageshow = function(event) {
   // ブラウザバックとかでキャッシュが残る恐れがあるので一旦リセット
-  
+  flashscreen.classList.remove("in");
+  bgi.classList.remove("apear");
+  katsuya.classList.remove("in");
+  textbox.classList.remove("apear");
+  bgi.classList.remove("apear2");
+  for(let i = 0;i < texts.length;i++){
+    texts[i].innerHTML = null;
+  };
+  for(let i = 0;i < frames.length;i++){
+    frames[i].classList.remove("apear");
+  };
+  for(let i = 0;i < selects.length;i++){
+    selects[i].checked = false;
+  };
+
   if (event.persisted) {
-    flashscreen.classList.remove("in");
-    bgi.classList.remove("apear");
-    katsuya.classList.remove("in");
-    textbox.classList.remove("apear");
-    bgi.classList.remove("apear2");
-    for(let i = 0;i < texts.length;i++){
-      texts[i].innerHTML = null;
-    };
-    for(let i = 0;i < frames.length;i++){
-      frames[i].classList.remove("apear");
-    };
-    for(let i = 0;i < selects.length;i++){
-      selects[i].checked = false;
-    };
-  
+    // bfcache発動時の処理
+    window.location.reload();
   }
 
   battle();
