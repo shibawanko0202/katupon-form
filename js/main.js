@@ -116,7 +116,6 @@ let textcounter = false;
 
 
 
-
 // 最終チェックの表示変更
 for(let i = 0; i < selects.length; i++){
   selects[i].addEventListener('change',() => {
@@ -133,27 +132,27 @@ for(let i = 0; i < selects.length; i++){
 
 
 
-// ブラウザバックでも発火するpageshowをつかう
+// ブラウザバックでも発火するpageshowをつかう(iOS対策)
 window.onpageshow = function(event) {
-    // ブラウザバックとかでキャッシュが残る恐れがあるので一旦リセット
-    flashscreen.classList.remove("in");
-    bgi.classList.remove("apear");
-    katsuya.classList.remove("in");
-    textbox.classList.remove("apear");
-    bgi.classList.remove("apear2");
-    for(let i = 0;i < texts.length;i++){
-      texts[i].innerHTML = null;
-    };
-    for(let i = 0;i < frames.length;i++){
-      frames[i].classList.remove("apear");
-    };
-    for(let i = 0;i < selects.length;i++){
-      selects[i].checked = false;
-    };
+  // ブラウザバックとかでキャッシュが残る恐れがあるので一旦リセット
+  flashscreen.classList.remove("in");
+  bgi.classList.remove("apear");
+  katsuya.classList.remove("in");
+  textbox.classList.remove("apear");
+  bgi.classList.remove("apear2");
+  for(let i = 0;i < texts.length;i++){
+    texts[i].innerHTML = null;
+  };
+  for(let i = 0;i < frames.length;i++){
+    frames[i].classList.remove("apear");
+  };
+  for(let i = 0;i < selects.length;i++){
+    selects[i].checked = false;
+  };
 
   if (event.persisted) {
     window.location.reload();
-  }
+  };
 
   battle();
 };
