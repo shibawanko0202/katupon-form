@@ -183,6 +183,9 @@
   /* text-align-last: left; */
   font-size: 16px;
 }
+.check-text.ban{
+  pointer-events: none;
+}
 .submit{
   opacity: 0;
   animation: blinkEffect .6s 8s step-end infinite;

@@ -7,6 +7,7 @@ const com_lists = document.getElementsByClassName(" command-list");
 let current_command = 0;
 
 const check_box = document.getElementById("check");
+const check_text = document.getElementById("check-text");
 const check_lists = document.getElementsByClassName(" check-list");
 let current_check = 0;
 let check = false;
@@ -140,6 +141,7 @@ window.onpageshow = function(event) {
   katsuya.classList.remove("in");
   textbox.classList.remove("apear");
   bgi.classList.remove("apear2");
+  check_text.classList.remove("ban");
   for(let i = 0;i < texts.length;i++){
     texts[i].innerHTML = null;
   };
@@ -155,4 +157,10 @@ window.onpageshow = function(event) {
   };
 
   battle();
+};
+
+
+// 多重送信防止
+check_text.onclick = function(event){
+  check_text.classList.add("ban");
 };
