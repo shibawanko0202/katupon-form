@@ -155,5 +155,11 @@ window.onpageshow = function(event) {
     window.location.reload();
   }
 
+};
+
+window.onpageshow = function(event) {
+  if (event.persisted) {
+    window.location.reload();
+  }
   battle();
 };

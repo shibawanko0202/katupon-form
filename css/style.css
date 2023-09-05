@@ -174,8 +174,8 @@
 .check dt{
   padding: 12px 12px;
   line-height: 28px;
-  text-align:justify;
-  text-align-last:justify;
+  /* text-align:justify;
+  text-align-last:justify; */
 }
 .check-text{
   padding: 12px;
