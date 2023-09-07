@@ -2,7 +2,7 @@
 
   @font-face{ 
     font-family: 'DQ';
-    src: url('../fonts/PixelMplus10-Regular.ttf') format('truetype');
+    src: url('../fonts/PixelMplus10-Regular-katupon.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
@@ -547,8 +547,8 @@
 .box .percent .number .title .value {
   font-size: 50px;
 }
-.box .percent .number .title {
-  font-size: 22px;
+.p-small {
+  font-size: 32px;
 }
 .box .graphtext {
   white-space: nowrap;
