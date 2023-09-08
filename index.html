@@ -1,142 +1,65 @@
 <!DOCTYPE html>
-<html lang="ja" prefix="og: http://ogp.me/ns#">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KATUPON QUEST</title>
+  <link rel="icon" href="img/スライムドット絵.png">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="shortcut icon" href="img/favicon.ico">
-
-  <!-- OGP設定 -->
-  <meta property="og:title" content="ゼタシィ -縁結び-">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="真剣な人の為の婚活アプリ">
-  <meta property="og:url" content="https://shibawanko0202.github.io/zetasy/">
-  <meta property="og:site_name" content="ゼタシィ -縁結び-">
-  <meta property="og:image" content="https://shibawanko0202.github.io/zetasy/img/ogp.png">
-
-  <!-- google icon -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-  <!-- google icon -->
-
-  <title>ゼタシィ -縁結び-</title>
 </head>
-
 <body>
-  <div class="attention hidden" id="attention">
-    <div class="attention_box">
-      <p>
-        サービスを利用できません
-      </p>
-      <p>
-        こちらのサービスは<br>
-        有料会員様限定となります<br>
-      </p>
-      <button>閉じる</button>
+  <div class="flashscreen" id="flashscreen"></div>
+  <div class="main" id="main">
+    <div class="bgi" id="bgi">
+      <img src="img/ヴェネチアンゴンドラ.png" alt="" class="bgi-img">
+      <img src="img/立ち絵.png" alt="" class="katsuya" id="katsuya">
+    </div>
+    <div class="readme frame">
+      選択肢を選んで<br>
+      「送信する」を<br>
+      タップして下さい
+    </div>
+    <div class="mairei frame">
+      けっこん<br>
+      しようぜ
+    </div>
+    <!-- <form action="" method="POST" target="hidden_iframe" onsubmit="submitted=true;"> -->
+    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeEKZuhcO3qPUkwcxJjmXb7jd_bR0GJ_LwPC8POyzXSdCBxzA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+      <dl class="command frame">
+        <dt class="gameover">泉帆</dt>
+        <dd class="command-lists">
+          <input type="radio" name="entry.1604613071" value="『うん』" id="select_1" class="list-check">
+          <label for="select_1" class="command-list">『うん』</label>
+          <input type="radio" name="entry.1604613071" value="『うなちゃづけ』" id="select_2" class="list-check">
+          <label for="select_2" class="command-list">『うなちゃづけ』</label>
+          <input type="radio" name="entry.1604613071" value="謀ったなー！？" id="select_3" class="list-check">
+          <label for="select_3" class="command-list">謀ったなー！？</label>
+          <input type="radio" name="entry.1604613071" value="あ、順番来たよ" id="select_4" class="list-check">
+          <label for="select_4" class="command-list">あ、順番来たよ</label>
+        </dd>
+      </dl>
+      <dl class="check frame" id="check">
+        <dt id="check-final" class="check-text">
+          「『うん』」で<br>よろしいですか？
+        </dt>
+        <dd>
+          <input type="submit" value="送信する" class="check-text submit" id="check-text">
+        </dd>
+      </dl>
+      <script type="text/javascript">
+        var submitted = false;
+      </script>
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='result.html';}"></iframe>
+    </form>
+    <div class="textbox frame" id="textbox">
+      <p class="text"></p>
+      <p class="text"></p>
+      <p class="text"></p>
+      <p class="text"></p>
     </div>
   </div>
-  <header>
-    <div class="header_top">
-      <div class="header-title">
-        <img src="img/zetasy.png" alt="" class="titleimg">
-        -縁結び-
-      </div>
-      <div class="hamburger_back" id="hamburger_back"></div>
-      <div class="hamburger-body" id="hamburger">
-        <button class="hamburger">
-          <span class="hamburger_bar"></span>
-          <span class="hamburger_bar"></span>
-          <span class="hamburger_bar"></span>
-        </button>
-        <p class="hamburger_p">
-          <span>
-            本日はご多用のなか<br>
-          </span>
-          <span>
-            わたしたちの結婚式にご参列くださり<br>
-          </span>
-          <span>
-            ありがとうございます<br>
-          </span>
-          <br>
-          <span>
-            ささやかですがお披露目の席をもうけました<br>
-          </span>
-          <br>
-          <span>
-            どうぞ楽しいひとときをおすごしください<br>
-          </span>
-          <br>
-          <span>渡辺勝也・谷元泉帆</span>
-        </p>
-      </div>
-    </div>
-    <ul class="header_menu">
-      <li class="paid_content">
-        <span class="material-symbols-outlined">
-          search
-          </span>
-        検索
-      </li>
-      <li class="paid_content">
-        <span class="material-symbols-outlined">
-          assignment
-          </span>
-        掲示板
-      </li>
-      <li id="messe">
-        <span class="topiccount" id="m_counter">1</span>
-        <span class="material-symbols-outlined">
-          mail
-          </span>
-        メッセージ
-      </li>
-      <li class="paid_content">
-        <span class="material-symbols-outlined">
-          favorite
-        </span>
-        お気に入り
-      </li>
-      <li class="visit" id="visit">
-        <span class="topiccount" id="v_counter">1</span>
-        <span class="material-symbols-outlined">
-          visibility
-          </span>
-        訪問者
-      </li>
-    </ul>
-  </header>
-  <main>
-    <ul class="situation">
-      <li class="current">新規</li>
-      <li class="paid_content">オンライン</li>
-    </ul>
-    <ul class="personlist" id="personlist">
-      <li class="person thumbnail_img" id="thumbnail_img">
-        <a href="" class="prof_link"></a>
-        <p class="thumbnail_info"></p>
-        <p class="thumbnail_oneword"></p>
-      </li>
-    </ul>
-    <div class="fake-footer"></div>
-  </main>
-  <footer>
-    <dl>
-      <dt>
-        -操作方法-
-      </dt>
-      <dd>
-        それぞれのプロフィール画面を確認し、<br>
-        <span class="material-symbols-outlined footer-heart" id="favorite">
-          favorite
-        </span>
-        かプロフ画像をタップしてください
-      </dd>
-    </dl>
-  </footer>
-
-  <script src="js/list.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
