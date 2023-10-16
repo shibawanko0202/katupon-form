@@ -72,8 +72,6 @@
   max-height: 700px;
   max-width: 500px;
   overflow: hidden;
-  /* height: 525px; */
-  /* margin: calc((100vh - 550px) / 2) auto; */
   opacity: 1;
 }
 .main.off{
@@ -88,6 +86,7 @@
   z-index: -1;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
+  overflow: hidden;
   /* margin: 100px 0 125px; */
   transform: scaleY(0);
   filter: grayscale(10%);
@@ -96,9 +95,10 @@
 }
 .bgi-img{
   width: 100%;
-  height: 100%;
+  height: 120%;
   object-fit: cover;
-  object-position: 50% 50%;
+  object-position: 60% 0%;
+  image-rendering: pixelated;
 }
 .bgi.apear{
   transform: scaleY(1);
@@ -114,6 +114,7 @@
   z-index: 0;
   opacity: 0;
   transition: opacity 0s 2.3s;
+  image-rendering: pixelated;
 }
 .katsuya.in{
   opacity: 1;
@@ -139,17 +140,30 @@
 }
 .readme{
   top: 2%;
-  left: 5%;
+  left: 10px;
   padding: 4px 12px;
   line-height: 30px;
   text-align:justify;
   text-align-last:justify;
 }
-.mairei{
+.meirei{
   top: 2%;
-  right: 5%;
+  left: 176px;
   padding: 4px 12px;
   line-height: 30px;
+}
+.to_result{
+  top: 2%;
+  right: 10px;
+  padding: 4px 12px;
+  line-height: 30px;
+  box-shadow: 4px 4px  #ffffff8f;
+  background-color: #adadad;
+  color: #161615;
+}
+.spacing{
+  /* display: block; */
+  margin: 4px;
 }
 .command{
   bottom: 10px;
@@ -304,6 +318,14 @@
     padding: 10px;
     font-size: 12px;
   }
+  .readme{
+    font-size: 15px;
+    left: 6px;
+  }
+  .meirei{
+    font-size: 15px;
+    left: 160px;
+  }
   .command{
     left: 4px;
   }
@@ -357,6 +379,8 @@
 
 .result-loading{
   position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -368,6 +392,7 @@
   opacity: 1;
   transition: opacity 1.2s;
   pointer-events: all;
+  overflow: hidden;
 }
 .result-loading.loaded{
   opacity: 0;
@@ -379,11 +404,9 @@
   display: flex;
 }
 .loading-dott{
-  /* position: relative; */
   display: block;
   width: 20px;
   height: 10px;
-  /* top: 8px; */
   margin-top: 8px;
 }
 .loading-dott:nth-child(1){
@@ -432,11 +455,22 @@
 }
 
 .result-body{
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   text-align: center;
+}
+.result-graph{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  /* height: 500px; */
+  min-height: 600px;
+  overflow-y: scroll;
 }
 .result-dt{
   display: flex;
@@ -450,7 +484,7 @@
   border-radius: 4px;
   outline: 1.5px solid #303029;;
   background-color: #303029;
-  margin: 32px auto 0px;
+  margin: 0px auto 0px;
   padding: 8px;
   width: 200px;
   cursor: pointer;
@@ -459,17 +493,43 @@
 .reload-button.apear{
   animation: blinkEffect 1.2s 3s step-end infinite;
 }
+.to_home{
+  font-size: 16px;
+  font-weight: normal;
+  border: 4px solid #fff;
+  border-radius: 4px;
+  outline: 1.5px solid #303029;;
+  background-color: #303029;
+  margin: 12px auto;
+  padding: 8px;
+  width: 140px;
+}
 .graph{
   width: 100%;
   max-width: 380px;
   margin: 0 auto;
   height: 60vh;
-  max-height: 450px;
+  min-height: 300px;
+  /* max-height: 450px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: space-around;
 }
+
+@media screen and (max-height: 460px) {
+  .result-dt{
+    position: absolute;
+    top: 10px;
+  }
+  .graph{
+    position: absolute;
+    top: 120px;
+    transform: scale(.8);
+  }
+}
+
+
 .box {
   width: 40%;
   height: 150px;

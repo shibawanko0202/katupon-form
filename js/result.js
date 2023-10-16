@@ -1,5 +1,10 @@
 "use strict"
 
+
+// ローディング画面
+const loading = document.getElementById("result-loading");
+const reload_btn = document.getElementById("reload-btn");
+
 // 選択肢の中身を定数定義
 const ans1 = "『うん』";
 const ans2 = "『うなちゃづけ』";
@@ -60,60 +65,68 @@ fetch(api_url)
 	// グラフアニメーション用の変数
 	const anim_sec = 50;
 
+  loading.classList.add("loaded");
+  setTimeout(() => {
+    for(let i = 0;i < lines.length;i++){
+      lines[i].classList.add("rotate");
+    };
+    const rotates = document.getElementsByClassName("rotate");
+  
+    // 円グラフアニメーション追加
+    rotates[0].style.strokeDashoffset = `calc(440 - (440 * ${select_01}) / 100)`;
+    rotates[0].style.animation = `circleAnim ${(select_01 * anim_sec) / 1000}s forwards`;
+  
+    rotates[1].style.strokeDashoffset = `calc(440 - (440 * ${select_02}) / 100)`;
+    rotates[1].style.animation = `circleAnim ${(select_02 * anim_sec) / 1000}s forwards`;
+  
+    rotates[2].style.strokeDashoffset = `calc(440 - (440 * ${select_03}) / 100)`;
+    rotates[2].style.animation = `circleAnim ${(select_03 * anim_sec) / 1000}s forwards`;
+  
+    rotates[3].style.strokeDashoffset = `calc(440 - (440 * ${select_04}) / 100)`;
+    rotates[3].style.animation = `circleAnim ${(select_04 * anim_sec) / 1000}s forwards`;
+  
+  
+    // カウントUPアニメーション
+    const countup01 = setInterval(()=>{
+      count1++;
+      values[0].textContent = count1;
+      if(count1 == select_01){
+        clearInterval(countup01);
+      };
+    },anim_sec);
+    const countup02 = setInterval(()=>{
+      count2++;
+      values[1].textContent = count2;
+      if(count2 == select_02){
+        clearInterval(countup02);
+      };
+    },anim_sec);
+    const countup03 = setInterval(()=>{
+      count3++;
+      values[2].textContent = count3;
+      if(count3 == select_03){
+        clearInterval(countup03);
+      };
+    },anim_sec);
+    const countup04 = setInterval(()=>{
+      count4++;
+      values[3].textContent = count4;
+      if(count4 == select_04){
+        clearInterval(countup04);
+      };
+    },anim_sec);
 
-	for(let i = 0;i < lines.length;i++){
-	  lines[i].classList.add("rotate");
-	};
-	const rotates = document.getElementsByClassName("rotate");
-
-	// 円グラフアニメーション追加
-	rotates[0].style.strokeDashoffset = `calc(440 - (440 * ${select_01}) / 100)`;
-	rotates[0].style.animation = `circleAnim ${(select_01 * anim_sec) / 1000}s forwards`;
-
-	rotates[1].style.strokeDashoffset = `calc(440 - (440 * ${select_02}) / 100)`;
-	rotates[1].style.animation = `circleAnim ${(select_02 * anim_sec) / 1000}s forwards`;
-
-	rotates[2].style.strokeDashoffset = `calc(440 - (440 * ${select_03}) / 100)`;
-	rotates[2].style.animation = `circleAnim ${(select_03 * anim_sec) / 1000}s forwards`;
-
-	rotates[3].style.strokeDashoffset = `calc(440 - (440 * ${select_04}) / 100)`;
-	rotates[3].style.animation = `circleAnim ${(select_04 * anim_sec) / 1000}s forwards`;
-
-
-	// カウントUPアニメーション
-	const countup01 = setInterval(()=>{
-	  count1++;
-	  values[0].textContent = count1;
-	  if(count1 == select_01){
-	    clearInterval(countup01);
-	  };
-	},anim_sec);
-	const countup02 = setInterval(()=>{
-	  count2++;
-	  values[1].textContent = count2;
-	  if(count2 == select_02){
-	    clearInterval(countup02);
-	  };
-	},anim_sec);
-	const countup03 = setInterval(()=>{
-	  count3++;
-	  values[2].textContent = count3;
-	  if(count3 == select_03){
-	    clearInterval(countup03);
-	  };
-	},anim_sec);
-	const countup04 = setInterval(()=>{
-	  count4++;
-	  values[3].textContent = count4;
-	  if(count4 == select_04){
-	    clearInterval(countup04);
-	  };
-	},anim_sec);
+    reload_btn.classList.add("apear");
+  }, 1000);
 });
 
-// 更新ボタン
-const reload_btn = document.getElementById("reload-btn");
 
+// 更新ボタン
 reload_btn.addEventListener('click',()=>{
 	location.reload();
 });
+
+// ロード画面(時間固定)
+// setTimeout(() => {
+//   loading.classList.add("loaded");
+// }, 5000);
