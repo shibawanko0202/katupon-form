@@ -109,7 +109,7 @@ let textcounter = false;
     };
     setTimeout(()=>{
       selects[0].checked = true;
-    },8000);
+    },7000);
 
   };
 
