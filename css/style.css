@@ -33,6 +33,57 @@
 /* common */
 
 
+  /* 送信のラグ時のローディング画面 */
+  .submit-loading{
+    position: fixed;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    user-select: none;
+    pointer-events: none;
+    background-color: #00000077;
+    opacity: 0;
+    transition: opacity .3s;
+  }
+  .submit-loading.apear{
+    opacity: 1;
+  }
+  .dott-container{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+  }
+  .dott-container > div{
+    width: 24px;
+    height: 24px;
+    margin: 16px;
+    background-color: #fff;
+  }
+  .submit-loading.apear .dott-container > div:nth-child(1){
+    animation: submit-animation .9s alternate infinite ease-in-out;
+  }
+  .submit-loading.apear .dott-container > div:nth-child(2){
+    animation: submit-animation .9s .3s alternate infinite ease-in-out;
+  }
+  .submit-loading.apear .dott-container > div:nth-child(3){
+    animation: submit-animation .9s .6s alternate infinite ease-in-out;
+  }
+  @keyframes submit-animation {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }    
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }   
+  }
+
 .flashscreen{
   position: fixed;
   width: 100%;
@@ -155,11 +206,16 @@
 .to_result{
   top: 2%;
   right: 10px;
-  padding: 4px 12px;
   line-height: 30px;
   box-shadow: 4px 4px  #ffffff8f;
   background-color: #adadad;
   color: #161615;
+}
+.to_result a{
+  padding: 4px 12px;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }
 .spacing{
   /* display: block; */
@@ -188,8 +244,6 @@
 .check dt{
   padding: 12px 12px;
   line-height: 28px;
-  /* text-align:justify;
-  text-align-last:justify; */
 }
 .check-text{
   padding: 12px;
@@ -234,6 +288,7 @@
   left: -127px;
   opacity: 0;
   animation: blinkEffect .6s step-end infinite;
+  image-rendering: pixelated;
 }
 .textbox{
   bottom: 175px;
@@ -501,8 +556,13 @@
   outline: 1.5px solid #303029;;
   background-color: #303029;
   margin: 12px auto;
-  padding: 8px;
   width: 140px;
+}
+.to_home a{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
 }
 .graph{
   width: 100%;

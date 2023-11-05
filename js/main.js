@@ -161,6 +161,10 @@ window.onpageshow = function(event) {
 
 
 // 多重送信防止
+
+const submit_loading = document.getElementById("submit_loading");
+
 check_text.onclick = function(event){
   check_text.classList.add("ban");
+  submit_loading.classList.add("apear");
 };
