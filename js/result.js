@@ -88,28 +88,36 @@ fetch(api_url)
   
     // カウントUPアニメーション
     const countup01 = setInterval(()=>{
-      count1++;
+      if(select_01 > 0){
+        count1++;
+      };
       values[0].textContent = count1;
       if(count1 == select_01){
         clearInterval(countup01);
       };
     },anim_sec);
     const countup02 = setInterval(()=>{
-      count2++;
+      if(select_02 > 0){
+        count2++;
+      };
       values[1].textContent = count2;
       if(count2 == select_02){
         clearInterval(countup02);
       };
     },anim_sec);
     const countup03 = setInterval(()=>{
-      count3++;
+      if(select_03 > 0){
+        count3++;
+      };
       values[2].textContent = count3;
       if(count3 == select_03){
         clearInterval(countup03);
       };
     },anim_sec);
     const countup04 = setInterval(()=>{
-      count4++;
+      if(select_04 > 0){
+        count4++;
+      };
       values[3].textContent = count4;
       if(count4 == select_04){
         clearInterval(countup04);
