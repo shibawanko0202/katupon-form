@@ -7,13 +7,13 @@ const reload_btn = document.getElementById("reload-btn");
 
 // 選択肢の中身を定数定義
 const ans1 = "『うん』";
-const ans2 = "『うなちゃづけ』";
+const ans2 = "『うめちゃづけ』";
 const ans3 = "謀ったなー！？";
 const ans4 = "あ、順番来たよ";
 
 // 選択肢の票数を定義、初期化
 var s1 = 0;	//『うん』 
-var s2 = 0;	//『うなちゃづけ』
+var s2 = 0;	//『うめちゃづけ』
 var s3 = 0;	//謀ったなー！？
 var s4 = 0;	//あ、順番来たよ
 

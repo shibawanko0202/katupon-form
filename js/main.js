@@ -3,6 +3,7 @@
 
 // コマンド設定
 const katsuya = document.getElementById("katsuya");
+const command_frame = document.getElementById("command_frame");
 const com_lists = document.getElementsByClassName(" command-list");
 let current_command = 0;
 
@@ -109,6 +110,8 @@ let textcounter = false;
     };
     setTimeout(()=>{
       selects[0].checked = true;
+      check_text.classList.remove("ban");
+      command_frame.classList.remove("ban");
     },7000);
 
   };
@@ -141,7 +144,7 @@ window.onpageshow = function(event) {
   katsuya.classList.remove("in");
   textbox.classList.remove("apear");
   bgi.classList.remove("apear2");
-  check_text.classList.remove("ban");
+  // check_text.classList.remove("ban");
   for(let i = 0;i < texts.length;i++){
     texts[i].innerHTML = null;
   };

@@ -226,6 +226,9 @@
   left: 10px;
   z-index: 1;
 }
+.command.ban{
+  pointer-events: none;
+}
 .frame.check{
   bottom: 30px;
   right: calc(1% * 4);
