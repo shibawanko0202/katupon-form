@@ -86,6 +86,7 @@ fetch(api_url)
     rotates[3].style.animation = `circleAnim ${(select_04 * anim_sec) / 1000}s forwards`;
   
   
+    console.log(select_01);
     // カウントUPアニメーション
     const countup01 = setInterval(()=>{
       if(select_01 > 0){
@@ -94,7 +95,7 @@ fetch(api_url)
       values[0].textContent = count1;
       if(count1 == select_01){
         clearInterval(countup01);
-      };
+      }
     },anim_sec);
     const countup02 = setInterval(()=>{
       if(select_02 > 0){

@@ -226,9 +226,6 @@
   left: 10px;
   z-index: 1;
 }
-.command.ban{
-  pointer-events: none;
-}
 .frame.check{
   bottom: 30px;
   right: calc(1% * 4);
@@ -259,7 +256,7 @@
 }
 .submit{
   opacity: 0;
-  animation: blinkEffect .6s 8s step-end infinite;
+  animation: blinkEffect .6s 7s step-end infinite;
 }
 .list-check{
   appearance: none;
@@ -270,6 +267,9 @@
 .command-lists{
   display: flex;
   flex-direction: column;
+}
+.command-lists.ban{
+  pointer-events: none;
 }
 .command-list{
   position: relative;

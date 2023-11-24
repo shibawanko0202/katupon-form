@@ -3,13 +3,13 @@
 
 // コマンド設定
 const katsuya = document.getElementById("katsuya");
-const command_frame = document.getElementById("command_frame");
-const com_lists = document.getElementsByClassName(" command-list");
+const command_lists = document.getElementById("command-lists");
+const com_lists = document.getElementsByClassName("command-list");
 let current_command = 0;
 
 const check_box = document.getElementById("check");
 const check_text = document.getElementById("check-text");
-const check_lists = document.getElementsByClassName(" check-list");
+const check_lists = document.getElementsByClassName("check-list");
 let current_check = 0;
 let check = false;
 
@@ -110,8 +110,8 @@ let textcounter = false;
     };
     setTimeout(()=>{
       selects[0].checked = true;
+      command_lists.classList.remove("ban");
       check_text.classList.remove("ban");
-      command_frame.classList.remove("ban");
     },7000);
 
   };
@@ -144,7 +144,6 @@ window.onpageshow = function(event) {
   katsuya.classList.remove("in");
   textbox.classList.remove("apear");
   bgi.classList.remove("apear2");
-  // check_text.classList.remove("ban");
   for(let i = 0;i < texts.length;i++){
     texts[i].innerHTML = null;
   };
